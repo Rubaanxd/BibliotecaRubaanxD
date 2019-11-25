@@ -1,5 +1,6 @@
 package ConexionFTPconThreads;
 
+import ConexionFTP.SFTPConnector;
 import com.jcraft.jsch.ChannelSftp;
 import com.jcraft.jsch.JSchException;
 import com.jcraft.jsch.Session;
@@ -55,7 +56,8 @@ public class SFTPBajarArchivo extends Observable implements Runnable {
         while (flag) {
             try {
                 System.out.println("conectando.....");
-                this.session = connector.connect("archivo", "soportemx", "192.168.40.15", 22);
+                SFTPConnector connector = new SFTPConnector("archivo", "soportemx", "192.168.40.15");
+                this.session = connector.connect();
                 System.out.println("Conectado");
                 getFile(path);
                 connector.disconnect();
