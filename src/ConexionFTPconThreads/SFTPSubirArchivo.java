@@ -16,7 +16,6 @@ import java.util.Observable;
 public class SFTPSubirArchivo extends Observable implements Runnable {
 
     private Session session;
-    private final SFTPConnector connector = new SFTPConnector();
     private boolean flag;
     private final File fichero;
 
@@ -67,8 +66,9 @@ public class SFTPSubirArchivo extends Observable implements Runnable {
         this.flag = true;
         while (flag) {
             try {
+                SFTPConnector connector = new SFTPConnector("archivo", "soportemx", "192.168.40.15");
                 System.out.println("conectando.....");
-                connector.connect();
+                this.session = connector.connect();
                 System.out.println("Conectado");
                 addFile(this.fichero);
                 connector.disconnect();
