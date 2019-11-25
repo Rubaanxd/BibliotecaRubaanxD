@@ -25,10 +25,10 @@ public class ConexionMYSQL {
      * @param pass Es la Contraseña con la cual ingresaremos
      */
     public ConexionMYSQL(String ip,String db, String user, String pass) {
-        this.ip = ip;
-        this.db = db;
         this.user = user;
         this.pass = pass;
+        this.url = "jdbc:mysql://"+ip+"/"+db;
+        System.out.println(this.url);
     }
     
     /**
@@ -45,7 +45,7 @@ public class ConexionMYSQL {
     public Connection connect(){
         try{
             Class.forName("org.gjt.mm.mysql.Driver");
-            link = DriverManager.getConnection(this.getUrl(), this.getUser(), this.getPass());
+            link = DriverManager.getConnection(this.url, this.user, this.pass);
        }catch(ClassNotFoundException | SQLException ex){
             JOptionPane.showMessageDialog(null,"Error en la Conexión");
        }
@@ -88,33 +88,10 @@ public class ConexionMYSQL {
     */
 
     /**
-     * @return El Nombre de la Base de Datos
-     */
-    public String getDb() {
-        return db;
-    }
-
-    /**
-     * @param db El Nombre de la Base de Datos a ingresar
-     */
-    public void setDb(String db) {
-        this.db = db;
-    }
-
-    /**
      * @return Devuelve la URl completa
      */
     public String getUrl() {
         return url;
-    }
-
-    /**
-     * @param url es la IP del Servidor
-     * La estructura seria la siguiente:
-     * jdbc:mysql://+ip+/+DBName
-     */
-    public void setUrl(String url) {
-        this.url = this.url+"/"+url+this.db;
     }
 
     /**
@@ -148,9 +125,7 @@ public class ConexionMYSQL {
     /**
      * Declaracion de Variables
      */
-    private String db;
-    private String ip;
-    private String url = "jdbc:mysql://"+ip+"/"+db;
+    private String url;
     private String user;
     private String pass;
     private Connection link = null;

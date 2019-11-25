@@ -290,4 +290,13 @@ public class ExpresionesRegulares {
     public static boolean validarTelefono_Exp(String texto) {
         return texto.matches("[0-9]{10}");
     }
+    
+    /**
+     * Valida si una cadena tiene formato de Ticket (6+ Digitos)
+     * @param texto
+     * @return 
+     */
+    public static boolean validarTicket(String texto) {
+        return texto.matches("[0-9]{6}+");
+    }
 }
