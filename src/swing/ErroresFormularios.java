@@ -5,11 +5,11 @@ import validaciones.ExpresionesRegulares;
 /*
 * @author RubaanxD
 */
-public class ErroresFormulario {
+public class ErroresFormularios {
 
     private StringBuilder errores;
 
-    public ErroresFormulario() {
+    public ErroresFormularios() {
         this.errores = new StringBuilder();
     }
 

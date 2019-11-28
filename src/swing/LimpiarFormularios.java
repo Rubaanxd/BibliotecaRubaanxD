@@ -22,7 +22,7 @@ import javax.swing.table.DefaultTableModel;
 /**
  * @author RubaanxD
  */
-public class Limpiar {
+public class LimpiarFormularios{
 
     /**
      * Vaciamos el texto de todas las cajas de texto pasadas.

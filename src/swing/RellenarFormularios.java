@@ -12,7 +12,7 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author RubaanxD
  */
-public class Rellenar {
+public class RellenarFormularios{
     
     /**
      * Rellena un combobox con los datos pasados
