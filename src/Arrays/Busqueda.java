@@ -1,5 +1,7 @@
 package arrays;
 
+import java.util.Arrays;
+
 /**
  * @author RubaanxD
  */
@@ -34,5 +36,12 @@ public class Busqueda {
         }
         return pos;
     }
+    public static boolean busquedaString(String array[], String valorBuscado){
+        String resultado = Arrays.stream(array)
+                         .filter(s -> s.equals(valorBuscado))
+                         .findFirst()
+                         .orElse(null);
+        return resultado != null;
+        }
     
 }
