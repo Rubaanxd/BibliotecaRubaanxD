@@ -17,6 +17,7 @@ public class SFTPBajarArchivo extends Observable implements Runnable {
     private Session session;
     private String path;
     private boolean flag;
+    private String dir = System.getProperty("java.io.tmpdir")+"temp.pdf";
 
     public SFTPBajarArchivo(String path) {
         this.path = path;
@@ -42,7 +43,7 @@ public class SFTPBajarArchivo extends Observable implements Runnable {
         if (this.session != null && this.session.isConnected()) {
             ChannelSftp channelSftp = (ChannelSftp) this.session.openChannel("sftp");
             channelSftp.connect();
-            channelSftp.get(src, "C:\\Users\\Ruben Angeles\\Desktop\\Scan\\temp.pdf");
+            channelSftp.get(src, dir);
             System.out.println("Archivo descargado Correctamente");
             //return is;
         } else {
@@ -63,7 +64,7 @@ public class SFTPBajarArchivo extends Observable implements Runnable {
                 connector.disconnect();
                 //Las siguientes 3 lineas son para abrir el archivo pdf
                 ProcessBuilder pb = new ProcessBuilder();
-                pb.command("cmd.exe", "/c", "C:\\Users\\Ruben Angeles\\Desktop\\Scan\\temp.pdf");
+                pb.command("cmd.exe", "/c", dir);
                 pb.start();
                 this.flag = false;
             } catch (JSchException | SftpException | IllegalAccessException | IOException e) {
