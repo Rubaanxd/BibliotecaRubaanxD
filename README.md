@@ -1,9 +1,23 @@
-# BibliotecaRubaanxD
+# Biblioteca de funciones utiles para implementar en Proyectos JAVA
 
-Bliblioteca con Distintos Metodos Utiles para la creacion de Apps en Java
+![](https://img.shields.io/github/stars/rubaanxd/BibliotecaRubaanxD.svg) ![](https://img.shields.io/github/forks/rubaanxd/BibliotecaRubaanxD.svg) ![](https://img.shields.io/github/tag/rubaanxd/BibliotecaRubaanxD.svg) ![](https://img.shields.io/github/release/rubaanxd/BibliotecaRubaanxD.svg) ![](https://img.shields.io/github/issues/rubaanxd/BibliotecaRubaanxD.svg) ![](https://img.shields.io/bower/v/BibliotecaRubaanxD.svg)
 
-Incluye SQL, SFTP, Validaciones, y otras utilerias.
+### Vision
+Tener una Biblioteca de metodos utiles para cualquier proyecto futuro en JAVA
 
-Un Agradecimiento al Autor de DiscoDuroDeRoer donde saque algunos metodos de su Bliblioteca.
+### Funciones
+- Archivos
+- Arrays
+- Socket Cliente y Servidor
+- Conexion sFTP a travez de JSSH
+- Conexion sFTP a travez de JSSH via Threads
+  - BajarArchivosSFTP
+  - SubirArchivoSFTP
+- Conexion SQL
+- Validaciones por Expresiones Regulares
+- En Swing, Validaciones y LAF
+- Propiedades System
+  - gtProcesador, getDirectorioTemporal, getNombreMaquina, getIPv4,etc
 
-Haz un Branch con tus metodos si los necesitas.
+### Comentarios
+Si te es de utilidad no dudes en ocuparla y mejorarla.
