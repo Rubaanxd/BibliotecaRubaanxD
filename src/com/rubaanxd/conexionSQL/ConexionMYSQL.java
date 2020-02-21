@@ -1,5 +1,7 @@
 package com.rubaanxd.conexionSQL;
 import java.sql.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 /**
@@ -50,11 +52,16 @@ public class ConexionMYSQL {
      *          posteriormente.
      */
     public Connection connect(){
+        //Connection link = null;
         try{
+            System.out.println("Conectando a DB");
             Class.forName("org.gjt.mm.mysql.Driver");
             link = DriverManager.getConnection(this.url, this.user, this.pass);
-       }catch(ClassNotFoundException | SQLException ex){
+            System.out.println("Conexion a DB Establecida");
+       }catch(SQLException ex){
             JOptionPane.showMessageDialog(null,"Error en la Conexión");
+       } catch (ClassNotFoundException ex) {
+           
        }
        return link;
     }
